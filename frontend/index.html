@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>P311 | IoT Fault Diagnosis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div>
+        <h1>⚙️ P311 IoT Fault Diagnosis</h1>
+        <p>Real-Time Machine Health Monitoring</p>
+    </div>
+
+    <div class="connection">
+        <span id="connectionDot"></span>
+        <span id="connectionText">Connecting...</span>
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- Machine Information -->
+
+    <section class="info-card">
+
+        <div>
+            <span>Machine</span>
+            <strong id="machineId">--</strong>
+        </div>
+
+        <div>
+            <span>Last Updated</span>
+            <strong id="timestamp">--</strong>
+        </div>
+
+    </section>
+
+
+    <!-- Status -->
+
+    <section class="status-card">
+
+        <div>
+
+            <p class="section-title">
+                MACHINE HEALTH STATUS
+            </p>
+
+            <h2 id="status">
+                Loading...
+            </h2>
+
+        </div>
+
+        <div id="faults">
+            Loading...
+        </div>
+
+    </section>
+
+
+    <!-- Sensor Cards -->
+
+    <section class="sensor-grid">
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">🌡️</div>
+
+            <div>
+                <p>Temperature</p>
+
+                <h2>
+                    <span id="temperature">--</span>
+                    <small>°C</small>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">📳</div>
+
+            <div>
+                <p>Vibration</p>
+
+                <h2>
+                    <span id="vibration">--</span>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">⚡</div>
+
+            <div>
+                <p>Current</p>
+
+                <h2>
+                    <span id="current">--</span>
+                    <small>A</small>
+                </h2>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Charts -->
+
+    <section class="charts-grid">
+
+        <div class="chart-card">
+
+            <h3>Temperature Trend</h3>
+
+            <canvas id="temperatureChart"></canvas>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <h3>Vibration Trend</h3>
+
+            <canvas id="vibrationChart"></canvas>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <h3>Current Trend</h3>
+
+            <canvas id="currentChart"></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- Recent Data -->
+
+    <section class="table-card">
+
+        <div class="table-header">
+
+            <h2>Recent Sensor Readings</h2>
+
+            <button onclick="loadData()">
+                ↻ Refresh
+            </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature</th>
+                        <th>Vibration</th>
+                        <th>Current</th>
+                        <th>Status</th>
+                        <th>Faults</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="historyTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    P311 IoT Fault Diagnosis System
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

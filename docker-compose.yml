@@ -1,0 +1,23 @@
+
+services:
+  api:
+    build: .
+    container_name: p311-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: p311-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./data:/var/lib/grafana/data-sources:ro
+    restart: unless-stopped
+
+volumes:
+  grafana-data:
