@@ -138,6 +138,12 @@ The simulator and MQTT receiver require valid broker configuration. Configure th
 | `/api/latest` | Latest sensor reading |
 | `/api/history` | Historical sensor readings |
 
+## Dashboard Preview
+
+The Grafana dashboard visualizes machine sensor readings, including temperature, vibration, current, and machine fault status.
+
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
 ## Future Improvements
 
 - Add predictive maintenance using machine learning.
